@@ -1,4 +1,4 @@
-const shoppingList= [
+const groceries= [
     {
         id: 1,
         item: "Milk",
@@ -38,15 +38,15 @@ const shoppingList= [
 
 ]
 
-// console.log(shoppingList)
+// console.log(groceries)
 
 const addItemToList = (itemObject) => {
-    const lastIndex= shoppingList.length - 1
-    const currentLastItem = shoppingList[lastIndex]
+    const lastIndex= groceries.length - 1
+    const currentLastItem = groceries[lastIndex]
     const maxId = currentLastItem.id
     const idForNewItem = maxId + 1
     itemObject.id = idForNewItem
-    shoppingList.push(itemObject)}
+    groceries.push(itemObject)}
 
 
 const whippedCream = {
@@ -85,5 +85,8 @@ addItemToList(crackers)
 addItemToList(ribeye)
 addItemToList(wine)
 
-
-console.log(shoppingList)
+const minimumPrice = 8
+for (grocery of groceries) {
+    if (grocery.price >= minimumPrice)
+console.log(` ${grocery.item},${grocery.price}`)
+}
